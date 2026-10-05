@@ -1,0 +1,11 @@
+# Secretos y estado local: nunca al repo
+_civitai_token.txt
+.env
+gmail_credentials.json
+_*.json
+_*.log
+_*.txt
+civitai_sessions/
+venv/
+__pycache__/
+*.part
