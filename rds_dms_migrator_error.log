@@ -1,0 +1,60 @@
+
+--- 2026-10-12T11:22:54 ---
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 290, in _choose_files_worker
+    paths = select_files_windows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 82, in select_files_windows
+    raise RuntimeError((result.stderr or result.stdout or f"PowerShell terminó con código {result.returncode}").strip())
+RuntimeError: PowerShell terminó con código 3
+
+
+--- 2026-10-12T11:22:56 ---
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 290, in _choose_files_worker
+    paths = select_files_windows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 82, in select_files_windows
+    raise RuntimeError((result.stderr or result.stdout or f"PowerShell terminó con código {result.returncode}").strip())
+RuntimeError: PowerShell terminó con código 3
+
+
+--- 2026-10-12T11:24:50 ---
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 290, in _choose_files_worker
+    paths = select_files_windows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 82, in select_files_windows
+    raise RuntimeError((result.stderr or result.stdout or f"PowerShell terminó con código {result.returncode}").strip())
+RuntimeError: PowerShell terminó con código 3
+
+
+--- 2026-10-12T11:55:54 ---
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 313, in _choose_files_worker
+    paths = select_files_windows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 95, in select_files_windows
+    raise RuntimeError(details or f"PowerShell terminó con código {result.returncode}")
+RuntimeError: PowerShell terminó con código 3
+
+
+--- 2026-10-12T12:08:55 ---
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 298, in _choose_files_worker
+    paths = select_files_windows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 87, in select_files_windows
+    raise RuntimeError(output_text or f"El selector terminó con código {result.returncode}.")
+RuntimeError: El selector terminó con código 3.
+
+
+--- 2026-10-12T12:09:03 ---
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 298, in _choose_files_worker
+    paths = select_files_windows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 87, in select_files_windows
+    raise RuntimeError(output_text or f"El selector terminó con código {result.returncode}.")
+RuntimeError: El selector terminó con código 3.
+

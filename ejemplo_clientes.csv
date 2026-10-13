@@ -1,0 +1,6 @@
+cliente_id,nombre,correo,fecha_alta,activo,saldo
+1001,Ana García,ana.garcia@example.com,2024-01-15,true,1250.50
+1002,Luis Pérez,luis.perez@example.com,2024-02-03,false,0.00
+1003,María López,maria.lopez@example.com,2024-02-20,true,89.99
+1004,Carlos Ruiz,carlos.ruiz@example.com,2024-03-08,true,412.75
+1005,Sofía Torres,sofia.torres@example.com,2024-04-12,false,37.20

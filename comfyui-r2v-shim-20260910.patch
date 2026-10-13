@@ -1,0 +1,21 @@
+diff --git a/comfy_extras/nodes_minimax_h3.py b/comfy_extras/nodes_minimax_h3.py
+index 0a08f185..810e2991 100644
+--- a/comfy_extras/nodes_minimax_h3.py
++++ b/comfy_extras/nodes_minimax_h3.py
+@@ -285,6 +285,16 @@ class MiniMaxH3ReferenceToVideo(io.ComfyNode):
+     @classmethod
+     def execute(cls, clip, vae, audio_vae, prompt, width, height, length, ref_image_size="match",
+                 ref_images=None, ref_videos=None, ref_video_audios=None, ref_audios=None) -> io.NodeOutput:
++        # Older frontends serialize a single autogrow connection under the flat
++        # container name, delivering the raw value instead of a name->value dict.
++        if torch.is_tensor(ref_images):
++            ref_images = {"ref_image_0": ref_images}
++        if torch.is_tensor(ref_videos):
++            ref_videos = {"ref_video_0": ref_videos}
++        if isinstance(ref_video_audios, dict) and "waveform" in ref_video_audios:
++            ref_video_audios = {"ref_video_audio_0": ref_video_audios}
++        if isinstance(ref_audios, dict) and "waveform" in ref_audios:
++            ref_audios = {"ref_audio_0": ref_audios}
+         latent, frame_count = _empty_av_latent(width, height, length)
+ 
+         ref_items = []   # for the tokenizer presentation, in request order

@@ -1,0 +1,21 @@
+e paso un documento de conocimiento: CONOCIMIENTO-APPS.md
+(ruta local: C:\Users\claud\Downloads\metadata\CONOCIMIENTO-APPS.md — si no tienes acceso al disco, está adjunto).
+
+Léelo completo antes de responder. Describe cómo están construidas y adaptadas varias apps mías:
+- Parte A: apps Python/Tkinter propias (Metadata Viewer, Civitai Scraper, Viggle Chunk Joiner, strip_meta).
+- Parte B: Ref Map, una app Electron de terceros que parcheé a inglés, más un agent-kit con su motor de prompts.
+- Parte C: Director Studio, un repo open source clonado y modificado localmente.
+
+Cómo quiero que lo uses:
+1. Trátalo como la fuente principal sobre estas apps. Si algo del documento choca con lo que ves en el código, manda el código: avísame la diferencia.
+2. Para crear o modificar apps, sigue los mismos patrones: un .py por app, lanzador .bat con el venv de ComfyUI, Tkinter con tema oscuro, workers en hilos que se comunican por una cola, descargas a .part + os.replace, caché y token junto al script.
+3. Respeta la sección "Errores conocidos / cosas a no repetir".
+4. No instales paquetes ni descargues modelos sin preguntarme antes (nombre y tamaño).
+5. Nunca leas, muestres ni copies los archivos de secretos que lista el documento (.env, _civitai_token.txt, gmail_credentials.json).
+6. Las rutas (D:\Program Files\ComfyUI, C:\Users\claud\...) son de mi PC. Si estás en otra máquina, pregúntame las equivalentes.
+
+Para confirmar que lo leíste, respóndeme en 5 líneas máximo:
+- qué hace cada app,
+- cuál es el patrón común de las apps de la Parte A,
+- qué cambios locales tiene Director Studio.
+Después espera mi tarea.
