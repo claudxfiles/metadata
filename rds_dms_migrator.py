@@ -229,7 +229,7 @@ class App(tk.Tk):
         top = ttk.Frame(self, padding=(18, 14)); top.pack(fill="x")
         ttk.Label(top, text="Migración de CSV a Amazon RDS", style="Title.TLabel").pack(anchor="w")
         ttk.Label(top, text="Selecciona fuentes, valida el lote y exporta un paquete revisable para la migración.", foreground=MUT).pack(anchor="w", pady=(4, 0))
-        ttk.Label(top, text="También puedes arrastrar CSV desde el Explorador y soltarlos sobre esta ventana.", foreground=MUT).pack(anchor="w", pady=(2, 0))
+
         bar = ttk.Frame(self, padding=(18, 4)); bar.pack(fill="x")
         ttk.Button(bar, text="＋ Agregar CSV", command=self.add_csv).pack(side="left"); ttk.Button(bar, text="Quitar selección", command=self.remove_selected).pack(side="left", padx=7)
         ttk.Button(bar, text="Validar lote", command=self.run_validation).pack(side="left", padx=7)
@@ -253,10 +253,7 @@ class App(tk.Tk):
         ttk.Button(conn, text="Cargar seleccionado", command=self.load_selected).pack(side="left", padx=5)
         foot = ttk.Frame(self, padding=(18, 7)); foot.pack(fill="x"); self.status = ttk.Label(foot, text="Listo. Los CSV se procesan localmente.", foreground=MUT)
         self.status.pack(side="left", fill="x", expand=True); ttk.Button(foot, text="Exportar paquete", command=self.export).pack(side="right")
-        # Alternativa robusta: arrastrar CSV desde Explorer y soltarlos sobre la ventana.
-        self.bind("<Drop>", self._on_drop, add="+")
-        self.bind("<DragEnter>", lambda event: "copy", add="+")
-        self.bind("<DragOver>", lambda event: "copy", add="+")
+        # Drag-and-drop se registra solo si la extensión tkinterdnd2 está instalada.
         self._enable_file_drop()
 
     def _text_tab(self, name):
@@ -272,8 +269,8 @@ class App(tk.Tk):
             self.drop_target_register(DND_FILES)
             self.dnd_bind("<<Drop>>", self._on_drop)
         except Exception:
-            # TkinterDnD es opcional: usa también rutas pegadas en la interfaz.
-            self.status.configure(text="Consejo: pega la ruta de una carpeta en el campo de carpeta del selector.")
+            # Extensión no instalada: mantener el selector integrado normal, sin binds inválidos.
+            return
 
     def _on_drop(self, event):
         try:

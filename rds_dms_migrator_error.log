@@ -58,3 +58,35 @@ Traceback (most recent call last):
     raise RuntimeError(output_text or f"El selector terminó con código {result.returncode}.")
 RuntimeError: El selector terminó con código 3.
 
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 502, in <module>
+    try: App().mainloop()
+         ^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 204, in __init__
+    self.q = queue.Queue(); self.profiles = []; self._style(); self._build(); self.after(120, self._pump)
+                                                               ^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 257, in _build
+    self.bind("<Drop>", self._on_drop, add="+")
+  File "C:\Users\claud\AppData\Local\Programs\Python\Python312\Lib\tkinter\__init__.py", line 1451, in bind
+    return self._bind(('bind', self._w), sequence, func, add)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\AppData\Local\Programs\Python\Python312\Lib\tkinter\__init__.py", line 1405, in _bind
+    self.tk.call(what + (sequence, cmd))
+_tkinter.TclError: bad event type or keysym "Drop"
+
+Traceback (most recent call last):
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 502, in <module>
+    try: App().mainloop()
+         ^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 204, in __init__
+    self.q = queue.Queue(); self.profiles = []; self._style(); self._build(); self.after(120, self._pump)
+                                                               ^^^^^^^^^^^^^
+  File "C:\Users\claud\Desktop\pruebas\metadata\rds_dms_migrator.py", line 257, in _build
+    self.bind("<Drop>", self._on_drop, add="+")
+  File "C:\Users\claud\AppData\Local\Programs\Python\Python312\Lib\tkinter\__init__.py", line 1451, in bind
+    return self._bind(('bind', self._w), sequence, func, add)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\claud\AppData\Local\Programs\Python\Python312\Lib\tkinter\__init__.py", line 1405, in _bind
+    self.tk.call(what + (sequence, cmd))
+_tkinter.TclError: bad event type or keysym "Drop"
+
